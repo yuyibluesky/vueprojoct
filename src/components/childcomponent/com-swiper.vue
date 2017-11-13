@@ -1,11 +1,11 @@
 <template>
-<div>
-      <mt-swipe :auto="4000">
+<div id='temp'>
+      <mt-swipe class='setheight'  :auto="4000">
             <mt-swipe-item v-for="(item,index) in list" :key="index">
-            <a :href="item.url">
+           
                  <img v-if='item.img!=null' :src="item.img" >
-                 <img v-if='item.src!=null' :src="item.src" >
-            </a>
+                    <img v-if='item.src!=null' :src="item.src" >
+           
             </mt-swipe-item>
        
         </mt-swipe>
@@ -26,21 +26,17 @@ export default {
 
   },
   methods:{
-      getimg(){
-          var url=''
-          this.$http.get(url)
-          .then(function(res){
-              this.list=res.body.message
-          })
+     
       }
-  }
+  
 }
 </script>
 
 <style lang="css" scoped>
+
 .mint-swipe, .mint-swipe-items-wrap{
     width:100%;
-    height: 400px;
+    height: 300px;
 }
 .mint-swipe-items-wrap>div{
     width: 100%;
@@ -49,7 +45,8 @@ export default {
 }
 .mint-swipe-items-wrap>div img{
     width:100%;
-    height: 400px;
+    height: 300px;
     background-repeat: round;
 }
+
 </style>
